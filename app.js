@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
   res.send('Hello from the video-to-s3 Express app!')
 })
 
-cron.schedule('0,10,20,30,40,50 * * * *', () => {
+cron.schedule('0,10,20,30,40,43,50 * * * *', () => {
   const myDate = new Date()
   const my_image_code = 'aus_snd'
   const my_image_prefix = image_codes[my_image_code]['image_code']
