@@ -8,7 +8,9 @@ const image_codes = {
   fd_vir: { areacode: 'fd_', image_code: 'fd__vir_' },
   fd_snd: { areacode: 'fd_', image_code: 'fd__snd_' },
   pi3_snd: { areacode: 'pi3', image_code: 'pi3_snd_' },
-  jpn_snd: { areacode: 'jpn', image_code: 'jpn_snd_' }
+  jpn_snd: { areacode: 'jpn', image_code: 'jpn_snd_' },
+  se1_snd: { areacode: 'se1', image_code: 'se1_snd_' },
+  pia_snd: { areacode: 'pia', image_code: 'pia_snd_' }
 }
 
 module.exports = { image_codes }

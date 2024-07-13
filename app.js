@@ -11,7 +11,9 @@ app.get('/', (req, res) => {
 })
 
 //render (hobby plan) app is woken up at 15 past the hour from AWS lambda
-//run the cron job at 20 past the hour (others can be run at 25, 30 etc)
+//run the cron jobs at 20, 25, 30, 35 past the hour
+
+//Cron Job 1. Fetch images for 'aus_snd':
 cron.schedule('20 * * * *', () => {
   const myDate = new Date()
   const my_image_code = 'aus_snd'
@@ -19,7 +21,29 @@ cron.schedule('20 * * * *', () => {
   //
   createVideoFromImages((image_bucket_dir = 'weather-data/satellite/public-images'), (image_prefix = my_image_prefix))
     .then(() => push_video_to_s3((image_prefix = my_image_prefix), (local_video_loc = './tmp/temp_video.mp4'), (video_bucket_dir = 'weather-data/satellite/public-videos')))
-    .then(() => console.log('Video upload complete. ', 'Node-cron task completed at time: ', myDate.toISOString()))
+    .then(() => console.log(`Video upload of ${my_image_code} complete. `, 'Node-cron task completed at time: ', myDate.toISOString()))
+})
+
+//Cron Job 2. Fetch images for 'se1_snd':
+cron.schedule('25 * * * *', () => {
+  const myDate = new Date()
+  const my_image_code = ' se1_snd'
+  const my_image_prefix = image_codes[my_image_code]['image_code']
+  //
+  createVideoFromImages((image_bucket_dir = 'weather-data/satellite/public-images'), (image_prefix = my_image_prefix))
+    .then(() => push_video_to_s3((image_prefix = my_image_prefix), (local_video_loc = './tmp/temp_video.mp4'), (video_bucket_dir = 'weather-data/satellite/public-videos')))
+    .then(() => console.log(`Video upload of ${my_image_code} complete. `, 'Node-cron task completed at time: ', myDate.toISOString()))
+})
+
+//Cron Job 3. Fetch images for 'pia_snd':
+cron.schedule('30 * * * *', () => {
+  const myDate = new Date()
+  const my_image_code = ' pia_snd'
+  const my_image_prefix = image_codes[my_image_code]['image_code']
+  //
+  createVideoFromImages((image_bucket_dir = 'weather-data/satellite/public-images'), (image_prefix = my_image_prefix))
+    .then(() => push_video_to_s3((image_prefix = my_image_prefix), (local_video_loc = './tmp/temp_video.mp4'), (video_bucket_dir = 'weather-data/satellite/public-videos')))
+    .then(() => console.log(`Video upload of ${my_image_code} complete. `, 'Node-cron task completed at time: ', myDate.toISOString()))
 })
 
 app.listen(port, () => {

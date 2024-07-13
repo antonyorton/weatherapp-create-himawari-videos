@@ -79,7 +79,7 @@ async function push_video_to_s3(image_prefix = 'aus_snd_', local_video_loc = './
 }
 
 // //testing
-// const my_image_code = 'aus_snd'
+// const my_image_code = 'se1_snd'
 // const my_image_prefix = image_codes[my_image_code]['image_code']
 // //
 // createVideoFromImages((image_bucket_dir = 'weather-data/satellite/public-images'), (image_prefix = my_image_prefix))
