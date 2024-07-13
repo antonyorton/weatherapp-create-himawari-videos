@@ -26,7 +26,7 @@ cron.schedule('20 * * * *', () => {
 })
 
 //Cron Job 2. Fetch images for 'se1_snd':
-cron.schedule('25 * * * *', () => {
+cron.schedule('20 * * * *', () => {
   const myDate = new Date()
   const my_image_code = ' se1_snd'
   const my_image_prefix = image_codes[my_image_code]['image_code']
@@ -37,7 +37,7 @@ cron.schedule('25 * * * *', () => {
 })
 
 //Cron Job 3. Fetch images for 'pia_snd':
-cron.schedule('30 * * * *', () => {
+cron.schedule('20 * * * *', () => {
   const myDate = new Date()
   const my_image_code = ' pia_snd'
   const my_image_prefix = image_codes[my_image_code]['image_code']
@@ -48,7 +48,7 @@ cron.schedule('30 * * * *', () => {
 })
 
 //Cron Job 4. Create hi-res image of full disk
-cron.schedule('35 * * * *', () => {
+cron.schedule('20 * * * *', () => {
   create_himawari_image().then(() => console.log('image created'))
 })
 
