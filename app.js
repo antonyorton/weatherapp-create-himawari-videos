@@ -47,10 +47,10 @@ cron.schedule('20 * * * *', () => {
     .then(() => console.log(`Video upload of ${my_image_code} complete. `, 'Node-cron task completed at time: ', myDate.toISOString()))
 })
 
-//Cron Job 4. Create hi-res image of full disk
-cron.schedule('20 * * * *', () => {
-  create_himawari_image().then(() => console.log('image created'))
-})
+// //Cron Job 4. Create hi-res image of full disk
+// cron.schedule('20 * * * *', () => {
+//   create_himawari_image().then(() => console.log('image created'))
+// })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
