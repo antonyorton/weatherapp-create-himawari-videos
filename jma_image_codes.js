@@ -10,7 +10,8 @@ const image_codes = {
   pi3_snd: { areacode: 'pi3', image_code: 'pi3_snd_' },
   jpn_snd: { areacode: 'jpn', image_code: 'jpn_snd_' },
   se1_snd: { areacode: 'se1', image_code: 'se1_snd_' },
-  pia_snd: { areacode: 'pia', image_code: 'pia_snd_' }
+  pia_snd: { areacode: 'pia', image_code: 'pia_snd_' },
+  tga_snd: { areacode: 'tga', image_code: 'tga_snd_' }
 }
 
 module.exports = { image_codes }

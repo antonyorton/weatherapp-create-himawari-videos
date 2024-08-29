@@ -46,6 +46,17 @@ cron.schedule('30 * * * *', () => {
     .then(() => console.log(`Video upload of ${my_image_code} complete. `, 'Node-cron task completed at time: ', myDate.toISOString()))
 })
 
+//Cron Job 4. Fetch images for 'tga_snd':
+cron.schedule('35 * * * *', () => {
+  const myDate = new Date()
+  const my_image_code = 'tga_snd'
+  const my_image_prefix = image_codes[my_image_code]['image_code']
+  //
+  createVideoFromImages((image_bucket_dir = 'weather-data/satellite/public-images'), (image_prefix = my_image_prefix))
+    .then(() => push_video_to_s3((image_prefix = my_image_prefix), (local_video_loc = './tmp/temp_video.mp4'), (video_bucket_dir = 'weather-data/satellite/public-videos')))
+    .then(() => console.log(`Video upload of ${my_image_code} complete. `, 'Node-cron task completed at time: ', myDate.toISOString()))
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
