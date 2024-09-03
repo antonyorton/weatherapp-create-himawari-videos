@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 // //run the cron jobs at 20, 25, 30, 35 past the hour
 
 //Cron Job 1. Fetch images for 'aus_snd':
-cron.schedule('20 * * * *', () => {
+cron.schedule('18 * * * *', () => {
   const myDate = new Date()
   const my_image_code = 'aus_snd'
   const my_image_prefix = image_codes[my_image_code]['image_code']
@@ -25,7 +25,7 @@ cron.schedule('20 * * * *', () => {
 })
 
 //Cron Job 2. Fetch images for 'se1_snd':
-cron.schedule('25 * * * *', () => {
+cron.schedule('21 * * * *', () => {
   const myDate = new Date()
   const my_image_code = 'se1_snd'
   const my_image_prefix = image_codes[my_image_code]['image_code']
@@ -36,7 +36,7 @@ cron.schedule('25 * * * *', () => {
 })
 
 //Cron Job 3. Fetch images for 'pia_snd':
-cron.schedule('30 * * * *', () => {
+cron.schedule('24 * * * *', () => {
   const myDate = new Date()
   const my_image_code = 'pia_snd'
   const my_image_prefix = image_codes[my_image_code]['image_code']
@@ -47,7 +47,7 @@ cron.schedule('30 * * * *', () => {
 })
 
 //Cron Job 4. Fetch images for 'tga_snd':
-cron.schedule('35 * * * *', () => {
+cron.schedule('27 * * * *', () => {
   const myDate = new Date()
   const my_image_code = 'tga_snd'
   const my_image_prefix = image_codes[my_image_code]['image_code']
